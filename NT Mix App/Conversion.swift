@@ -17,39 +17,39 @@ extension Double{
         return round(result * roundAmount) / roundAmount
     }
     
-    func gallonsToFluidOunces()->Double{
+    func gallonsToFluidOunces(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func ouncesToPounds()->Double{
+    func ouncesToPounds(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func poundsToFluidOunces()->Double{
+    func poundsToFluidOunces(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func cupsToGallons()->Double{
+    func cupsToGallons(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func gallonsToCups()->Double{
+    func gallonsToCups(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func pintsToGallons()->Double{
+    func pintsToGallons(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func gallonsToPints()->Double{
+    func gallonsToPints(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func quartToGallons()->Double{
+    func quartToGallons(roundAmount:Double)->Double{
         return 0.0
     }
     
-    func gallonsToQuarts()->Double{
+    func gallonsToQuarts(roundAmount:Double)->Double{
         return 0.0
     }
 }
