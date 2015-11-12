@@ -10,8 +10,7 @@ import UIKit
 
 extension Double{
     func fluidOuncesToGallons(roundAmount:Double)->Double{
-    
-        //there are 128 fluid ounces in a gallon
+        //128 fluid ounces per gallon
         let result = self / 128
         return round(result * roundAmount) / roundAmount
     }
@@ -24,6 +23,8 @@ extension Double{
     func ouncesToPounds(roundAmount:Double)->Double{
         //jude
         return 0.0
+        let result = roundAmount/16
+        return round(result)
     }
     
     func poundsToFluidOunces(roundAmount:Double)->Double{
@@ -41,10 +42,12 @@ extension Double{
     }
     
     func pintsToGallons(roundAmount:Double)->Double{
+        //brian
         return 0.0
     }
     
     func gallonsToPints(roundAmount:Double)->Double{
+        //brian
         return 0.0
     }
     
