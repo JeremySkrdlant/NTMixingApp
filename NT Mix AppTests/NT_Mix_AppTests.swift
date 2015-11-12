@@ -21,16 +21,12 @@ class NT_Mix_AppTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFluidOuncesToGallons() {
+        let startAmount = 43.0;
+        let result = startAmount.fluidOuncesToGallons(100)
+        XCTAssert(result == 0.34, "It is converted correctly according to Siri")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  
     
 }
