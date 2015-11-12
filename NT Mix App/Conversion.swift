@@ -62,7 +62,6 @@ extension Double{
         //Xavier
         let result = self * 4
         return round(result * roundAmount) / roundAmount
-
     }
 }
 
