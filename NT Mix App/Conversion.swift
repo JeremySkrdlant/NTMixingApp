@@ -43,12 +43,14 @@ extension Double{
     
     func pintsToGallons(roundAmount:Double)->Double{
         //brian
-        return 0.0
+        let result = self / 8
+        return round(result * roundAmount)/roundAmount
     }
     
     func gallonsToPints(roundAmount:Double)->Double{
         //brian
-        return 0.0
+        let result = self * 8
+        return round(result * roundAmount)/roundAmount
     }
     
     func quartToGallons(roundAmount:Double)->Double{
