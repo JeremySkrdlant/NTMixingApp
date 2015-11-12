@@ -32,6 +32,12 @@ class NT_Mix_AppTests: XCTestCase {
         let result = startAmount.ouncesToPounds(100)
         XCTAssert(result == 0.94, "It is converted correctly according to Siri")
     }
+    func testPoundsToOunces(){
+        let startAmount = 1.0
+        let result = startAmount.poundsToFluidOunces(10)
+        print(result)
+        XCTAssert(result == 16.0, "It is converted correctly according to Siri")
+    }
     func testCupsToGallons(){
         let startAmount = 45.0
         let results = startAmount.cupsToGallons(100)
