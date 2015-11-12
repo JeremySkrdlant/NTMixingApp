@@ -31,7 +31,6 @@ extension Double{
     
     func cupsToGallons(roundAmount:Double)->Double{
         //raymond
-
         let result = self / 16.0
         return round(result * roundAmount) / roundAmount
     }
