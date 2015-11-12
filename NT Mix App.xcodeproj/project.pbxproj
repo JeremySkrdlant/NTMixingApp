@@ -15,6 +15,7 @@
 		170904601BF4F2530062D0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1709045E1BF4F2530062D0B5 /* LaunchScreen.storyboard */; };
 		1709046B1BF4F2530062D0B5 /* NT_Mix_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709046A1BF4F2530062D0B5 /* NT_Mix_AppTests.swift */; };
 		170904761BF4F2530062D0B5 /* NT_Mix_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904751BF4F2530062D0B5 /* NT_Mix_AppUITests.swift */; };
+		175AB4521BF4F3CC00B0509B /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AB4511BF4F3CC00B0509B /* Conversion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		170904711BF4F2530062D0B5 /* NT Mix AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NT Mix AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		170904751BF4F2530062D0B5 /* NT_Mix_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NT_Mix_AppUITests.swift; sourceTree = "<group>"; };
 		170904771BF4F2530062D0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175AB4511BF4F3CC00B0509B /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1709045E1BF4F2530062D0B5 /* LaunchScreen.storyboard */,
 				170904611BF4F2530062D0B5 /* Info.plist */,
 				170904591BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld */,
+				175AB4511BF4F3CC00B0509B /* Conversion.swift */,
 			);
 			path = "NT Mix App";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170904551BF4F2530062D0B5 /* ViewController.swift in Sources */,
+				175AB4521BF4F3CC00B0509B /* Conversion.swift in Sources */,
 				170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */,
 				1709045B1BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld in Sources */,
 			);
@@ -488,6 +492,7 @@
 				1709047C1BF4F2530062D0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1709047D1BF4F2530062D0B5 /* Build configuration list for PBXNativeTarget "NT Mix AppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				1709047F1BF4F2530062D0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		170904801BF4F2530062D0B5 /* Build configuration list for PBXNativeTarget "NT Mix AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				170904821BF4F2530062D0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
