@@ -22,7 +22,8 @@ extension Double{
     }
     
     func ouncesToPounds(roundAmount:Double)->Double{
-        return 0.0
+        let result = roundAmount/16
+        return round(result)
     }
     
     func poundsToFluidOunces(roundAmount:Double)->Double{
