@@ -27,6 +27,18 @@ class NT_Mix_AppTests: XCTestCase {
         XCTAssert(result == 0.34, "It is converted correctly according to Siri")
     }
     
+    func testCupsToGallons(){
+        let startAmount = 45.0
+        let results = startAmount.cupsToGallons(100)
+       XCTAssert(results == 2.81, "this is converted correctly")
+        
+    }
+    func testGallonsToCups(){
+        let startAmount = 45.0
+        let results = startAmount.gallonsToCups(100)
+        XCTAssert(results == 720.0, "this is converted correctly")
+    }
+    
   
     
 }
