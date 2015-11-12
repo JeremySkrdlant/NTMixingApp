@@ -46,11 +46,13 @@ extension Double{
     }
     
     func quartToGallons(roundAmount:Double)->Double{
-        return 0.0
+        let result = self / 4
+        return round(result * roundAmount) / roundAmount
     }
     
     func gallonsToQuarts(roundAmount:Double)->Double{
-        return 0.0
+        let result = self * 4
+        return round(result * roundAmount) / roundAmount
     }
 }
 
