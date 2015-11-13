@@ -12,13 +12,13 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
-    
     @IBOutlet weak var productsTableView: UITableView!
     
     var arrayOfProducts:[Product] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        arrayOfProducts.append(Product(rate: 0, units: MeasurementUnit.gallon))
     }
     
     // MARK:- TableView Data Source and Delegate Section
@@ -31,10 +31,18 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
             let dest = tableView.dequeueReusableCellWithIdentifier("cell") as! Datacell
             dest.acres = (self.acresInput.text! as NSString).doubleValue
             dest.product = arrayOfProducts[indexPath.row]
+            dest.changeUnitsButton.tag = indexPath.row
+            dest.changeUnitsButton.addTarget(self, action: "updateUnits:", forControlEvents: .TouchUpInside)
+            //create the updateUnits function
             return dest
         }
         let addCell = tableView.dequeueReusableCellWithIdentifier("addCell")
         return addCell!
+    }
+    
+    func updateUnits(btn:UIButton){
+        print("updating Units")
+        self.performSegueWithIdentifier("updateUnits", sender: nil)
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0
@@ -150,7 +158,8 @@ class Datacell:UITableViewCell{
     @IBOutlet weak var applicationRatePerAcre: UITextField!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var applicationRateUnits: UILabel!
-    
+    @IBOutlet weak var changeUnitsButton: UIButton!
+
     @IBAction func changeInApplicationLevel(sender: UITextField) {
         product?.productRate = (sender.text! as NSString).doubleValue
         let total = product!.outputAmountInGallons(acres, precision: precision)

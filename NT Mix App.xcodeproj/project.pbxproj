@@ -11,6 +11,7 @@
 		1704597E1BF63B9A00720622 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
 		1704597F1BF63CAF00720622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
 		170459801BF63CB100720622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
+		170459821BF677AC00720622 /* ChooseUnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170459811BF677AC00720622 /* ChooseUnitsViewController.swift */; };
 		170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
 		170904551BF4F2530062D0B5 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
 		170904581BF4F2530062D0B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170904561BF4F2530062D0B5 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170459811BF677AC00720622 /* ChooseUnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUnitsViewController.swift; sourceTree = "<group>"; };
 		1709044F1BF4F2530062D0B5 /* NT Mix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NT Mix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		170904521BF4F2530062D0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		170904541BF4F2530062D0B5 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				170904611BF4F2530062D0B5 /* Info.plist */,
 				170904591BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld */,
 				175AB4511BF4F3CC00B0509B /* Conversion.swift */,
+				170459811BF677AC00720622 /* ChooseUnitsViewController.swift */,
 			);
 			path = "NT Mix App";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170459821BF677AC00720622 /* ChooseUnitsViewController.swift in Sources */,
 				170904551BF4F2530062D0B5 /* CalculationViewController.swift in Sources */,
 				175AB4521BF4F3CC00B0509B /* Conversion.swift in Sources */,
 				170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */,
