@@ -115,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7G-Dc-bAn" id="7pU-s2-Frh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-FA-gYz">
@@ -136,10 +136,10 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="fluidAmountAction:" destination="L7G-Dc-bAn" eventType="editingDidEnd" id="gS6-sM-bRr"/>
+                                                        <action selector="changeInApplicationLevel:" destination="L7G-Dc-bAn" eventType="editingChanged" id="0ic-mm-16f"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHl-MB-Iqd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eHl-MB-Iqd">
                                                     <rect key="frame" x="484" y="8" width="60" height="43"/>
                                                     <animations/>
                                                     <constraints>
@@ -188,9 +188,11 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="coversionLbl" destination="eHl-MB-Iqd" id="AhP-EJ-8kG"/>
-                                            <outlet property="fluidAmountLbl" destination="PKW-x2-jjR" id="4zQ-Kt-2T1"/>
-                                            <outlet property="productNameLbl" destination="9rk-FA-gYz" id="m2E-A2-T6c"/>
+                                            <outlet property="applicationRatePerAcre" destination="PKW-x2-jjR" id="4uZ-CZ-cRK"/>
+                                            <outlet property="applicationRateUnits" destination="t1X-MM-gIi" id="O2g-Ve-9xI"/>
+                                            <outlet property="productNameLabel" destination="9rk-FA-gYz" id="Lg6-lc-YG3"/>
+                                            <outlet property="totalAmountLabel" destination="eHl-MB-Iqd" id="AtK-hx-Mdm"/>
+                                            <outlet property="totalAmountUnits" destination="Qmu-5X-xGX" id="DjF-r1-024"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCell" rowHeight="50" id="Cda-it-yAx">
@@ -284,6 +286,7 @@
                     <connections>
                         <outlet property="acresInput" destination="f4O-Kz-3h4" id="BmZ-mZ-xM4"/>
                         <outlet property="applicationRateInput" destination="BWk-T1-my3" id="rB8-GV-46M"/>
+                        <outlet property="productsTableView" destination="oMn-FP-azM" id="L59-0E-YYA"/>
                         <outlet property="tankVolumeInput" destination="zjK-1B-8ZM" id="26a-1t-Bn5"/>
                     </connections>
                 </viewController>

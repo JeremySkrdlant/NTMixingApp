@@ -12,11 +12,16 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
+    
+    @IBOutlet weak var productsTableView: UITableView!
+    
     var arrayOfProducts:[Product] = []
     override func viewDidLoad() {
         super.viewDidLoad()
      
     }
+    
+    // MARK:- TableView Data Source and Delegate Section
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -24,6 +29,8 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         if indexPath.section == 0
         {
             let dest = tableView.dequeueReusableCellWithIdentifier("cell") as! Datacell
+            dest.acres = (self.acresInput.text! as NSString).doubleValue
+            dest.product = arrayOfProducts[indexPath.row]
             return dest
         }
         let addCell = tableView.dequeueReusableCellWithIdentifier("addCell")
@@ -48,17 +55,21 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
+    // MARK:- Handle Keyboards
     @IBAction func hideKeyboards() {
         tankVolumeInput.resignFirstResponder()
         acresInput.resignFirstResponder()
         applicationRateInput.resignFirstResponder()
     }
+    
+    // MARK:- Input Auto Calculations
  
     @IBAction func tankVolume() {
         let tank = (tankVolumeInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
         if (appRate != 0){
             acresInput.text = "\(tank/appRate)"
+            productsTableView.reloadData()
         }
     }
     @IBAction func applicationRate() {
@@ -66,19 +77,24 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         let appRate = (applicationRateInput.text! as NSString).doubleValue
         if appRate != 0{
             acresInput.text = "\(tank/appRate)"
+            productsTableView.reloadData()
+            
         }else{
-            acresInput.text = "invalid"
+            acresInput.text = "0"
         }
     }
 
     @IBAction func acres() {
         let appRate = (applicationRateInput.text! as NSString).doubleValue
-        let acress = (acresInput.text! as NSString).doubleValue
+        let acres = (acresInput.text! as NSString).doubleValue
         if (appRate != 0){
-             tankVolumeInput.text = "\(acress * appRate)"
+             tankVolumeInput.text = "\(acres * appRate)"
         }
+        productsTableView.reloadData()
     }
 }
+
+
 
 class Product: NSObject {
     var unitOfMeasurment:MeasurementUnit
@@ -125,10 +141,20 @@ enum MeasurementUnit{
 }
 
 class Datacell:UITableViewCell{
-    @IBOutlet weak var productNameLbl: UITextField!
-    @IBAction func fluidAmountAction(sender: UITextField) {
-    }
-    @IBOutlet weak var fluidAmountLbl: UITextField!
-    @IBOutlet weak var coversionLbl: UILabel!
+    var product:Product?
+    var acres = 0.0
+    var precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
     
+    @IBOutlet weak var productNameLabel: UITextField!
+    @IBOutlet weak var totalAmountUnits: UILabel!
+    @IBOutlet weak var applicationRatePerAcre: UITextField!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var applicationRateUnits: UILabel!
+    
+    @IBAction func changeInApplicationLevel(sender: UITextField) {
+        product?.productRate = (sender.text! as NSString).doubleValue
+        let total = product!.outputAmountInGallons(acres, precision: precision)
+        totalAmountLabel.text = "\(total)"
+        
+    }
 }
