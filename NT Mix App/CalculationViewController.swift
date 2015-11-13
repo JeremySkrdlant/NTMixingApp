@@ -71,10 +71,8 @@ class Product: NSObject {
         self.productRate = rate
     }
     
-    func outputAmountInGallons(acres:Double)->Double{
+    func outputAmountInGallons(acres:Double, precision:Double)->Double{
         var currentRate = 0.0
-        //This gets the precision from the app delegate
-        let precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
         
         //convert the product rate into gallons
         switch(unitOfMeasurment)
