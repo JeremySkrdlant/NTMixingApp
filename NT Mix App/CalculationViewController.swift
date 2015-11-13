@@ -38,8 +38,9 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         let tank = (tankVolumeInput.text! as NSString).doubleValue
         let acress = (acresInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
-        if (tank == 0){
-            tankVolumeInput.text = "\(acress * appRate)"
+        
+        if (appRate != 0){
+            acresInput.text = "\(tank/appRate)"
         }
         
     }
@@ -47,8 +48,10 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         let tank = (tankVolumeInput.text! as NSString).doubleValue
         let acress = (acresInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
-        if (appRate==0){
-            applicationRateInput.text = "\(tank/acress)"
+        if appRate != 0{
+            acresInput.text = "\(tank/appRate)"
+        }else{
+            acresInput.text = "invalid"
         }
     }
 
@@ -56,8 +59,9 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         let tank = (tankVolumeInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
         let acress = (acresInput.text! as NSString).doubleValue
-        if (acress == 0){
-            acresInput.text = "\(tank/appRate)"
+        
+        if (appRate != 0){
+             tankVolumeInput.text = "\(acress * appRate)"
         }
     }
 }
