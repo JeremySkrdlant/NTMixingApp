@@ -62,4 +62,48 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     }
 }
 
+class Product: NSObject {
+    var unitOfMeasurment:MeasurementUnit
+    var productRate:Double
+    
+    init(rate:Double, units:MeasurementUnit) {
+        self.unitOfMeasurment = units
+        self.productRate = rate
+    }
+    
+    func outputAmountInGallons(acres:Double)->Double{
+        var currentRate = 0.0
+        //This gets the precision from the app delegate
+        let precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
+        
+        //convert the product rate into gallons
+        switch(unitOfMeasurment)
+        {
+        case MeasurementUnit.cup:
+            currentRate = productRate.cupsToGallons(precision)
+        case MeasurementUnit.gallon:
+            currentRate = productRate
+        case MeasurementUnit.fluidOunce:
+            currentRate = productRate.fluidOuncesToGallons(precision)
+        case MeasurementUnit.quart:
+            currentRate = productRate.quartToGallons(precision)
+        case MeasurementUnit.pint:
+            currentRate = productRate.pintsToGallons(precision)
+        case MeasurementUnit.pound:
+            currentRate = productRate
+        }
+        //take it times the rate
+        let totalAmountInGallons = currentRate * acres
+        return totalAmountInGallons
+    }
+}
+
+enum MeasurementUnit{
+    case fluidOunce
+    case gallon
+    case pint
+    case cup
+    case quart
+    case pound
+}
 
