@@ -77,6 +77,30 @@ class NT_Mix_AppTests: XCTestCase {
         let result = startAmount.pintsToGallons(100)
         XCTAssert(result == 5.38, "siri")
     }
+    
+    func testFluidOunceProduct(){
+        let testProduct = Product(rate: 8, units: MeasurementUnit.fluidOunce)
+        let result = testProduct.outputAmountInGallons(40,precision: 10000)
+        XCTAssert(result == 2.5, "2.5 = \(result)")
+    }
+    
+    func testPintsProduct(){
+        let testProduct = Product(rate: 1.5, units: MeasurementUnit.pint)
+        let result = testProduct.outputAmountInGallons(40, precision: 10000)
+        XCTAssert(result == 7.5, "7.5 = \(result)")
+    }
+    
+    func testCupsProduct(){
+        let testProduct = Product(rate: 32, units: MeasurementUnit.cup)
+        let result = testProduct.outputAmountInGallons(40, precision: 10000)
+        XCTAssert(result == 80, "80 = \(result)")
+    }
+    
+    func testQuartProduct(){
+        let testProduct = Product(rate: 4, units: MeasurementUnit.quart)
+        let result = testProduct.outputAmountInGallons(40, precision: 10000)
+        XCTAssert(result == 40, "40 = \(result)")
+    }
 
     
 }

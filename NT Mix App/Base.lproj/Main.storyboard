@@ -122,13 +122,17 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7G-Dc-bAn" id="7pU-s2-Frh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IQd-qu-esE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nWp-gG-aIh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>

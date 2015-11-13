@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 extension Double{
     func fluidOuncesToGallons(roundAmount:Double)->Double{
         //128 fluid ounces per gallon
         let result = self / 128
+        print("We have a conversion with amount of \(result)")
+        
         return round(result * roundAmount) / roundAmount
     }
     
