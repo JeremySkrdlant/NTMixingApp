@@ -12,6 +12,7 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -45,12 +46,28 @@ class Product: NSObject {
         self.productRate = rate
     }
     
-    func outputAmountInGallons()->Double{
+    func outputAmountInGallons(acres:Double)->Double{
+        var currentRate = 0.0
+        //This gets the precision from the app delegate
+        let precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
+        
         //convert the product rate into gallons
-        
+        switch(unitOfMeasurment)
+        {
+        case MeasurementUnit.cup:
+            currentRate = productRate.cupsToGallons(precision)
+        case MeasurementUnit.gallon:
+            currentRate = productRate
+        case MeasurementUnit.fluidOunce:
+            currentRate = productRate.fluidOuncesToGallons(precision)
+        case MeasurementUnit.quart:
+            currentRate = productRate.quartToGallons(precision)
+        case MeasurementUnit.pint:
+            currentRate = productRate.pintsToGallons(precision)
+        }
         //take it times the rate
-        
-        return 0.0
+        let totalAmountInGallons = currentRate * acres
+        return totalAmountInGallons
     }
 }
 
