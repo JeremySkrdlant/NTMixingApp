@@ -12,19 +12,21 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
+    let precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        <#code#>
+        return 0
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell")
+        return cell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
 
     @IBAction func hideKeyboards() {
@@ -46,10 +48,8 @@ class Product: NSObject {
         self.productRate = rate
     }
     
-    func outputAmountInGallons(acres:Double)->Double{
+    func outputAmountInGallons(acres:Double, precision:Double)->Double{
         var currentRate = 0.0
-        //This gets the precision from the app delegate
-        let precision = (UIApplication.sharedApplication().delegate as! AppDelegate).precision
         
         //convert the product rate into gallons
         switch(unitOfMeasurment)
@@ -64,6 +64,9 @@ class Product: NSObject {
             currentRate = productRate.quartToGallons(precision)
         case MeasurementUnit.pint:
             currentRate = productRate.pintsToGallons(precision)
+        case MeasurementUnit.pound:
+            //Need to figure this out. 
+            currentRate = productRate
         }
         //take it times the rate
         let totalAmountInGallons = currentRate * acres
