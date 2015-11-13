@@ -29,23 +29,25 @@
                                     <action selector="hideKeyboards" destination="BYZ-38-t0r" eventType="touchDown" id="Ujn-SO-xST"/>
                                 </connections>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjK-1B-8ZM" userLabel="Tank Volume Input">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjK-1B-8ZM" userLabel="Tank Volume Input">
                                 <rect key="frame" x="175" y="135" width="340" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="tankVolume" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9cK-Vl-8Xa"/>
+                                    <action selector="tankVolume" destination="BYZ-38-t0r" eventType="editingChanged" id="hdZ-eA-kq1"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWk-T1-my3" userLabel="Application Rate Input">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWk-T1-my3" userLabel="Application Rate Input">
                                 <rect key="frame" x="175" y="180" width="340" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4O-Kz-3h4" userLabel="Acres Input">
-                                <rect key="frame" x="175" y="229" width="340" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="applicationRate" destination="BYZ-38-t0r" eventType="editingDidEnd" id="A9Z-6t-mQj"/>
+                                    <action selector="applicationRate" destination="BYZ-38-t0r" eventType="editingChanged" id="f9t-ln-5Ca"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tank Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk7-SE-9ZS">
                                 <rect key="frame" x="20" y="139" width="147" height="21"/>
@@ -86,7 +88,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpk-4e-NX5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpk-4e-NX5">
                                 <rect key="frame" x="523" y="238" width="57" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -113,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7G-Dc-bAn" id="7pU-s2-Frh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-FA-gYz">
@@ -151,6 +153,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nWp-gG-aIh"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4O-Kz-3h4" userLabel="Acres Input">
+                                <rect key="frame" x="175" y="229" width="340" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="acres" destination="BYZ-38-t0r" eventType="editingChanged" id="KqO-DK-oIh"/>
+                                    <action selector="acres" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fUx-RY-DgM"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

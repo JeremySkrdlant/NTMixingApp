@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1704597D1BF63B9900720622 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
+		1704597E1BF63B9A00720622 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
+		1704597F1BF63CAF00720622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
+		170459801BF63CB100720622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
 		170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
 		170904551BF4F2530062D0B5 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
 		170904581BF4F2530062D0B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170904561BF4F2530062D0B5 /* Main.storyboard */; };
@@ -275,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1704597F1BF63CAF00720622 /* AppDelegate.swift in Sources */,
 				1709046B1BF4F2530062D0B5 /* NT_Mix_AppTests.swift in Sources */,
+				1704597D1BF63B9900720622 /* CalculationViewController.swift in Sources */,
 				175AB4541BF4F91D00B0509B /* Conversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170459801BF63CB100720622 /* AppDelegate.swift in Sources */,
 				170904761BF4F2530062D0B5 /* NT_Mix_AppUITests.swift in Sources */,
+				1704597E1BF63B9A00720622 /* CalculationViewController.swift in Sources */,
 				175AB4551BF4F91E00B0509B /* Conversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

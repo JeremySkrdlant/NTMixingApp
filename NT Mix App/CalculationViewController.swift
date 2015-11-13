@@ -34,8 +34,36 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         applicationRateInput.resignFirstResponder()
     }
  
+    @IBAction func tankVolume() {
+        let tank = (tankVolumeInput.text! as NSString).doubleValue
+        let acress = (acresInput.text! as NSString).doubleValue
+        let appRate = (applicationRateInput.text! as NSString).doubleValue
+        
+        if (appRate != 0){
+            acresInput.text = "\(tank/appRate)"
+        }
+        
+    }
+    @IBAction func applicationRate() {
+        let tank = (tankVolumeInput.text! as NSString).doubleValue
+        let acress = (acresInput.text! as NSString).doubleValue
+        let appRate = (applicationRateInput.text! as NSString).doubleValue
+        if appRate != 0{
+            acresInput.text = "\(tank/appRate)"
+        }else{
+            acresInput.text = "invalid"
+        }
+    }
 
-
+    @IBAction func acres() {
+        let tank = (tankVolumeInput.text! as NSString).doubleValue
+        let appRate = (applicationRateInput.text! as NSString).doubleValue
+        let acress = (acresInput.text! as NSString).doubleValue
+        
+        if (appRate != 0){
+             tankVolumeInput.text = "\(acress * appRate)"
+        }
+    }
 }
 
 class Product: NSObject {
@@ -48,12 +76,28 @@ class Product: NSObject {
         self.productRate = rate
     }
     
-    func outputAmountInGallons()->Double{
+    func outputAmountInGallons(acres:Double, precision:Double)->Double{
+        var currentRate = 0.0
+        
         //convert the product rate into gallons
-        
+        switch(unitOfMeasurment)
+        {
+        case MeasurementUnit.cup:
+            currentRate = productRate.cupsToGallons(precision)
+        case MeasurementUnit.gallon:
+            currentRate = productRate
+        case MeasurementUnit.fluidOunce:
+            currentRate = productRate.fluidOuncesToGallons(precision)
+        case MeasurementUnit.quart:
+            currentRate = productRate.quartToGallons(precision)
+        case MeasurementUnit.pint:
+            currentRate = productRate.pintsToGallons(precision)
+        case MeasurementUnit.pound:
+            currentRate = productRate
+        }
         //take it times the rate
-        
-        return 0.0
+        let totalAmountInGallons = currentRate * acres
+        return totalAmountInGallons
     }
 }
 
