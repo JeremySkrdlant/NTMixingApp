@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 extension Double{
     func fluidOuncesToGallons(roundAmount:Double)->Double{
         //128 fluid ounces per gallon

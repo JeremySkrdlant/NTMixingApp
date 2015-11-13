@@ -36,3 +36,29 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
 
 }
 
+class Product: NSObject {
+    var unitOfMeasurment:MeasurementUnit
+    var productRate:Double
+    
+    init(rate:Double, units:MeasurementUnit) {
+        self.unitOfMeasurment = units
+        self.productRate = rate
+    }
+    
+    func outputAmountInGallons()->Double{
+        //convert the product rate into gallons
+        
+        //take it times the rate
+        
+        return 0.0
+    }
+}
+
+enum MeasurementUnit{
+    case fluidOunce
+    case gallon
+    case pint
+    case cup
+    case quart
+    case pound
+}
