@@ -12,18 +12,20 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
+    var arrayOfProducts = []
     override func viewDidLoad() {
         super.viewDidLoad()
      
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        <#code#>
+        return 1
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        let dest = tableView.dequeueReusableCellWithIdentifier("cell") as! Datacell
+        return dest
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return arrayOfProducts.count
     }
 
     @IBAction func hideKeyboards() {
@@ -39,6 +41,7 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
 class Product: NSObject {
     var unitOfMeasurment:MeasurementUnit
     var productRate:Double
+    var name:String = ""
     
     init(rate:Double, units:MeasurementUnit) {
         self.unitOfMeasurment = units
@@ -61,4 +64,13 @@ enum MeasurementUnit{
     case cup
     case quart
     case pound
+}
+
+class Datacell:UITableViewCell{
+    @IBOutlet weak var productNameLbl: UITextField!
+    @IBAction func fluidAmountAction(sender: UITextField) {
+    }
+    @IBOutlet weak var fluidAmountLbl: UITextField!
+    @IBOutlet weak var coversionLbl: UILabel!
+    
 }
