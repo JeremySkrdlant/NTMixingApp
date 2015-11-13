@@ -13,11 +13,9 @@ class NT_Mix_AppTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -25,12 +23,25 @@ class NT_Mix_AppTests: XCTestCase {
         let startAmount = 43.0;
         let result = startAmount.fluidOuncesToGallons(100)
         XCTAssert(result == 0.34, "It is converted correctly according to Siri")
+        let startTwo = 12.0;
+        let result2 = startTwo.fluidOuncesToGallons(1000)
+        XCTAssert(result2 == 0.094, "12 fl oz to gallons")
     }
     
     func testOuncesToPounds(){
         let startAmount = 15.0
         let result = startAmount.ouncesToPounds(100)
         XCTAssert(result == 0.94, "It is converted correctly according to Siri")
+        let start2 = 42.0
+        let result2 = start2.ouncesToPounds(10)
+        XCTAssert(result2 == 2.6, "42 ounces to pounds")
+        
+    }
+    func testPoundsToOunces(){
+        let startAmount = 1.0
+        let result = startAmount.poundsToFluidOunces(10)
+        print(result)
+        XCTAssert(result == 16.0, "It is converted correctly according to Siri")
     }
     func testCupsToGallons(){
         let startAmount = 45.0
@@ -56,6 +67,16 @@ class NT_Mix_AppTests: XCTestCase {
         XCTAssert(result == 172, "It is converted correctly according to Siri")
     }
 
-  
+    func testGallonsToPints(){
+        let startAmount = 43.0;
+        let result = startAmount.gallonsToPints(100)
+        XCTAssert(result == 344, "siri")
+    }
+    func testPintsToGallons(){
+        let startAmount = 43.0;
+        let result = startAmount.pintsToGallons(100)
+        XCTAssert(result == 5.38, "siri")
+    }
+
     
 }
