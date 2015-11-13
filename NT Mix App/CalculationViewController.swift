@@ -12,20 +12,40 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
-    var arrayOfProducts = []
+    var arrayOfProducts:[Product] = []
     override func viewDidLoad() {
         super.viewDidLoad()
      
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let dest = tableView.dequeueReusableCellWithIdentifier("cell") as! Datacell
-        return dest
+        if indexPath.section == 0
+        {
+            let dest = tableView.dequeueReusableCellWithIdentifier("cell") as! Datacell
+            return dest
+        }
+        let addCell = tableView.dequeueReusableCellWithIdentifier("addCell")
+        return addCell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfProducts.count
+        if section == 0
+        {
+            return arrayOfProducts.count
+        }else
+        {
+            return 1
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.section == 1)
+        {
+            let newProduct = Product(rate: 0, units: MeasurementUnit.gallon)
+            arrayOfProducts.append(newProduct)
+            tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Top)
+        }
     }
 
     @IBAction func hideKeyboards() {
@@ -36,17 +56,13 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
  
     @IBAction func tankVolume() {
         let tank = (tankVolumeInput.text! as NSString).doubleValue
-        let acress = (acresInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
-        
         if (appRate != 0){
             acresInput.text = "\(tank/appRate)"
         }
-        
     }
     @IBAction func applicationRate() {
         let tank = (tankVolumeInput.text! as NSString).doubleValue
-        let acress = (acresInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
         if appRate != 0{
             acresInput.text = "\(tank/appRate)"
@@ -56,10 +72,8 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     @IBAction func acres() {
-        let tank = (tankVolumeInput.text! as NSString).doubleValue
         let appRate = (applicationRateInput.text! as NSString).doubleValue
         let acress = (acresInput.text! as NSString).doubleValue
-        
         if (appRate != 0){
              tankVolumeInput.text = "\(acress * appRate)"
         }
