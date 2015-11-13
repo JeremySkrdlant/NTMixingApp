@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904521BF4F2530062D0B5 /* AppDelegate.swift */; };
-		170904551BF4F2530062D0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* ViewController.swift */; };
+		170904551BF4F2530062D0B5 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170904541BF4F2530062D0B5 /* CalculationViewController.swift */; };
 		170904581BF4F2530062D0B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170904561BF4F2530062D0B5 /* Main.storyboard */; };
 		1709045B1BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 170904591BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld */; };
 		1709045D1BF4F2530062D0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1709045C1BF4F2530062D0B5 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		1709044F1BF4F2530062D0B5 /* NT Mix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NT Mix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		170904521BF4F2530062D0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		170904541BF4F2530062D0B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		170904541BF4F2530062D0B5 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		170904571BF4F2530062D0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1709045A1BF4F2530062D0B5 /* NT_Mix_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NT_Mix_App.xcdatamodel; sourceTree = "<group>"; };
 		1709045C1BF4F2530062D0B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				170904521BF4F2530062D0B5 /* AppDelegate.swift */,
-				170904541BF4F2530062D0B5 /* ViewController.swift */,
+				170904541BF4F2530062D0B5 /* CalculationViewController.swift */,
 				170904561BF4F2530062D0B5 /* Main.storyboard */,
 				1709045C1BF4F2530062D0B5 /* Assets.xcassets */,
 				1709045E1BF4F2530062D0B5 /* LaunchScreen.storyboard */,
@@ -264,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170904551BF4F2530062D0B5 /* ViewController.swift in Sources */,
+				170904551BF4F2530062D0B5 /* CalculationViewController.swift in Sources */,
 				175AB4521BF4F3CC00B0509B /* Conversion.swift in Sources */,
 				170904531BF4F2530062D0B5 /* AppDelegate.swift in Sources */,
 				1709045B1BF4F2530062D0B5 /* NT_Mix_App.xcdatamodeld in Sources */,

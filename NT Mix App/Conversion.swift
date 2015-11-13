@@ -26,29 +26,32 @@ extension Double{
     }
     
     func poundsToFluidOunces(roundAmount:Double)->Double{
-        return 0.0
+        let result = self * 16.0
+        return round(result * roundAmount) / roundAmount
     }
     
     func cupsToGallons(roundAmount:Double)->Double{
-        //raymond
+
         let result = self / 16.0
         return round(result * roundAmount) / roundAmount
     }
     
     func gallonsToCups(roundAmount:Double)->Double{
-        //raymond
+  
         let result = self * 16.0
         return round(result * roundAmount) / roundAmount
     }
     
     func pintsToGallons(roundAmount:Double)->Double{
         //brian
-        return 0.0
+        let result = self / 8
+        return round(result * roundAmount)/roundAmount
     }
     
     func gallonsToPints(roundAmount:Double)->Double{
         //brian
-        return 0.0
+        let result = self * 8
+        return round(result * roundAmount)/roundAmount
     }
     
     func quartToGallons(roundAmount:Double)->Double{
