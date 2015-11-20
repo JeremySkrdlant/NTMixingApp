@@ -8,17 +8,26 @@
 
 import UIKit
 
-class CalculationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CalculationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ChooseUnitsDelegate {
     @IBOutlet weak var tankVolumeInput: UITextField!
     @IBOutlet weak var acresInput: UITextField!
     @IBOutlet weak var applicationRateInput: UITextField!
     @IBOutlet weak var productsTableView: UITableView!
     
     var arrayOfProducts:[Product] = []
+    var currentUpdatedProduct = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         arrayOfProducts.append(Product(rate: 0, units: MeasurementUnit.gallon))
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "updateUnits")
+        {
+            let dest = segue.destinationViewController as! ChooseUnitsViewController
+            dest.delegate = self 
+        }
     }
     
     // MARK:- TableView Data Source and Delegate Section
@@ -42,6 +51,7 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
     
     func updateUnits(btn:UIButton){
         print("updating Units")
+        currentUpdatedProduct = btn.tag
         self.performSegueWithIdentifier("updateUnits", sender: nil)
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,17 +110,28 @@ class CalculationViewController: UIViewController, UITableViewDataSource, UITabl
         }
         productsTableView.reloadData()
     }
+    
+    // MARK:- change units measured delegate methods
+    func deleteChemical() {
+        arrayOfProducts.removeAtIndex(currentUpdatedProduct)
+        productsTableView.reloadData()
+    }
+    
+    func updateUnitValue(input: MeasurementUnit, output: MeasurementUnit) {
+        
+    }
 }
 
 
 
 class Product: NSObject {
-    var unitOfMeasurment:MeasurementUnit
+    var inputUnitOfMeasurment:MeasurementUnit
+    var outputUnitOfMeasurement = MeasurementUnit.gallon
     var productRate:Double
     var name:String = ""
     
     init(rate:Double, units:MeasurementUnit) {
-        self.unitOfMeasurment = units
+        self.inputUnitOfMeasurment = units
         self.productRate = rate
     }
     
@@ -118,7 +139,7 @@ class Product: NSObject {
         var currentRate = 0.0
         
         //convert the product rate into gallons
-        switch(unitOfMeasurment)
+        switch(inputUnitOfMeasurment)
         {
         case MeasurementUnit.cup:
             currentRate = productRate.cupsToGallons(precision)

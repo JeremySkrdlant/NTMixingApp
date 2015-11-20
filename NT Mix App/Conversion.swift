@@ -8,6 +8,36 @@
 
 import UIKit
 
+extension String{
+    func convertToMeasurementUnit()->MeasurementUnit?{
+        if (self.lowercaseString == "cup")
+        {
+            return MeasurementUnit.cup
+        }
+        if (self.lowercaseString == "gallon")
+        {
+            return MeasurementUnit.gallon
+        }
+        if (self.lowercaseString == "pint")
+        {
+            return MeasurementUnit.pint
+        }
+        if (self.lowercaseString == "fluid ounce")
+        {
+            return MeasurementUnit.fluidOunce
+        }
+        if (self.lowercaseString == "quart")
+        {
+            return MeasurementUnit.quart
+        }
+        if (self.lowercaseString == "pound")
+        {
+            return MeasurementUnit.pound
+        }
+        
+        return nil
+    }
+}
 
 extension Double{
     func fluidOuncesToGallons(roundAmount:Double)->Double{

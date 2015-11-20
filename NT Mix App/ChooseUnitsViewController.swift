@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ChooseUnitsDelegate{
+    func updateUnitValue(input:MeasurementUnit, output:MeasurementUnit)
+    func deleteChemical()
+}
+
 class ChooseUnitsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var delegate:ChooseUnitsDelegate?
+    
     @IBOutlet weak var unitsPickerView: UIPickerView!
 
     override func viewDidLoad() {
@@ -16,6 +24,9 @@ class ChooseUnitsViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
 
     @IBAction func confirmSettings() {
+        let inputString = unitStrings[unitsPickerView.selectedRowInComponent(0)]
+        let outputString = unitStrings[unitsPickerView.selectedRowInComponent(1)]
+        delegate?.updateUnitValue(inputString.convertToMeasurementUnit()!, output: outputString.convertToMeasurementUnit()!)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -36,17 +47,10 @@ class ChooseUnitsViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func removeChemical() {
-        //Show a confirmation alert.
+        // TODO:- Show a confirmation alert.
+        delegate?.deleteChemical()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
